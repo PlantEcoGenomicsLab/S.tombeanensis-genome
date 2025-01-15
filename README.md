@@ -4,7 +4,7 @@ Please note that all the annotated pipelines are suitable for fdalgrande@bio-ort
 
 
 ## Quality Control
-For quality control of PacBio HiFi reads we used FastQC. 
+For quality control of PacBio HiFi reads we used `FastQC.sh`. 
 
 ## Raw Assembly
-Initial raw assembly was done with hifiasm.
+Initial raw assembly was done with `hifiasm1.sh`.
