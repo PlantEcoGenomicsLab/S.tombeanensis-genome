@@ -19,4 +19,4 @@ minimap2 -ax map-pb /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.hap1.p_ctg
 samtools view -S -b aln_S_tomb.asm.bp.hap1.sam > aln_S_tomb.asm.bp.hap1.bam &
 
 samtools sort aln_S_tomb.asm.bp.hap1.bam -o aln_S_tomb.asm.bp.hap1.sorted.bam &
-samtools index aln_S_tomb.asm.bp.hap1.sorted.bam &
+samtools index -c aln_S_tomb.asm.bp.hap1.sorted.bam &
