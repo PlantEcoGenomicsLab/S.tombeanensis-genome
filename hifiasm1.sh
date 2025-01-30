@@ -1,5 +1,6 @@
 #!/bin/bash --login
 
+#HifiAsm is used for genome assembly with high-precision sequencing data (HiFi) produced by PacBio
 hifiasm -o /data/fdalgrande_data/Stombeanensis/S_tomb.asm -t 32 /data/fdalgrande_data/Stombeanensis/S_tomb.hifi_reads.fastq.gz 2> /data/fdalgrande_data/Stombeanensis/S_tomb.log &
 #For genomes much larger than human (3.1 Gb), applying -f38 or even -f39 is preferred to save memory on k-mer counting
 
