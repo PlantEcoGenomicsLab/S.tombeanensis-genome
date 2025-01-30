@@ -1,6 +1,6 @@
 #!/bin/bash --login
 
-#haplotipe1
+#haplotype1
 blobtools filter \
      --param bestsumorder_phylum--Inv=Streptophyta \
      --out Stomb_hap1.filtered.blobtools \
@@ -8,7 +8,7 @@ blobtools filter \
      --summary summary_Stomb_hap1.txt \
      --table ~ blobtools_Stomb_hap1/ &
 
-#haplotipe2
+#haplotype2
 blobtools filter \
      --param bestsumorder_phylum--Inv=Streptophyta \
      --out Stomb_hap2.filtered.blobtools \
