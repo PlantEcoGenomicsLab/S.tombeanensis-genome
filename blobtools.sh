@@ -1,6 +1,6 @@
 #!/bin/bash --login
 
-conda activate test
+conda activate btk
 
 #haplotype1
 blobtools create --fasta /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.hap1.p_ctg.fa \
@@ -20,4 +20,8 @@ blobtools_Stomb_hap2 &
 
 #primary
 blobtools create --fasta /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.p_ctg.fa \
---cov /data/fdalgrande_data/Stombeanensis/minimap2/aln_S_tomb.asm.bp.primary.sorted.bam \
+ --cov /data/fdalgrande_data/Stombeanensis/minimap2/aln_S_tomb.asm.bp.primary.sorted.bam \
+ --busco S_tomb_primary_busco_full_table.tsv \
+ --hits /data/fdalgrande_data/Stombeanensis/diamond/S_tomb.asm.bp.primary.diamond.out \
+ --taxdump /data/fdalgrande_data/tools/taxdump \
+blobtools_Stomb_primary &
