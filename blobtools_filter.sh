@@ -1,6 +1,7 @@
 #!/bin/bash --login
 
 #haplotype1
+#runs the filtering process using BlobTools
 blobtools filter \
      --param bestsumorder_phylum--Inv=Streptophyta \
      --out Stomb_hap1.filtered.blobtools \
@@ -19,7 +20,7 @@ blobtools filter \
 #primary
 blobtools filter \
      --param bestsumorder_phylum--Inv=Streptophyta \
-     --out Stomb_hap1.filtered.blobtools \
-     --fasta /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.hap1.p_ctg.fa \
-     --summary summary_Stomb_hap1.txt \
-     --table ~ blobtools_Stomb_hap1/ &
+     --out Stomb_primary.filtered.blobtools \
+     --fasta /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.p_ctg.fa \
+     --summary summary_Stomb_primary.txt \
+     --table ~ blobtools_Stomb_primary/ &
