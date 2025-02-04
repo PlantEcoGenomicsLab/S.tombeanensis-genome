@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
-#haplotype1
 #runs the filtering process using BlobTools
+#haplotype1
 blobtools filter \
      --param bestsumorder_phylum--Inv=Streptophyta \
      --out Stomb_hap1.filtered.blobtools \
