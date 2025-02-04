@@ -27,3 +27,14 @@
         --evalue 1e-25 \
         --threads 16 \
         > S_tomb.asm.bp.hap2.diamond.out &
+
+#run diamond on the primary assembly
+/data/fdalgrande_data/tools/diamond blastx \
+        --query  ../S_tomb.asm.bp.p_ctg.fa \
+        --db /data/fdalgrande_data/tools/swissprot.taxids.dmnd \
+        --outfmt 6 qseqid staxids bitscore qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue \
+        --sensitive \
+        --max-target-seqs 5 \
+        --evalue 1e-25 \
+        --threads 16 \
+        > S_tomb.asm.bp.primary.diamond.out &
