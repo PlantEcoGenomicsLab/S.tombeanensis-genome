@@ -2,6 +2,7 @@
 
 conda activate btk
 
+#script to generate a BlobTools dataset for haplotype 1, haplotype2 and primary, integrating sequence, coverage, BUSCO, taxonomic hits and taxdump data
 #haplotype1
 blobtools create --fasta /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.hap1.p_ctg.fa \
  --cov /data/fdalgrande_data/Stombeanensis/minimap2/aln_S_tomb.asm.bp.hap1.sorted.bam \
