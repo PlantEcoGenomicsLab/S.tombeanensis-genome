@@ -21,3 +21,10 @@ busco \
  -l viridiplantae_odb10 \
  -m genome \
  -o S_tomb.asm.bp.hap2_completeness & 
+
+#primary
+busco \
+ -i /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.p_ctg.len_filtered.fa \
+ -l viridiplantae_odb10 \
+ -m genome \
+ -o S_tomb.asm.bp.primary.len_filtered_completeness &
