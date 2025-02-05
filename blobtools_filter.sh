@@ -1,5 +1,7 @@
 #!/bin/bash --login
 
+conda activate btk
+
 #runs the filtering process using BlobTools
 #haplotype1
 blobtools filter \
