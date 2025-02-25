@@ -7,4 +7,4 @@ conda activate oatk
 /data/fdalgrande_data/tools/OatkDB/oatkdb -t 8 -o eudicotiledons_mito 71240 mitochondrion &
 
 #run oatk
-oatk -k 1001 -c 70 -t 10 -m eudicot.fam -o Stomb_mito_oatk /data/fdalgrande_data/Stombeanensis/S_tomb.hifi_reads.fastq.gz &
+oatk -k 1001 -c 70 -t 10 -m eudicotiledons_mito.fam -o Stomb_mito_oatk /data/fdalgrande_data/Stombeanensis/S_tomb.hifi_reads.fastq.gz &
