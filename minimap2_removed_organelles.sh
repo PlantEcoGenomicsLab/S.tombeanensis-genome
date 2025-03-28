@@ -12,7 +12,6 @@ conda activate test
 #indexing the assebly
 minimap2 -d S_tomb_removed_organelles.mmi /data/fdalgrande_data/Stombeanensis/blast/S_tomb_removed_organelles_80.fa &
 
-#aligning...assembled reads to raw reads (subreads.bam/fastq in case of pacbio)
 minimap2 -ax map-pb /data/fdalgrande_data/Stombeanensis/blast/S_tomb_removed_organelles_80.fa /data/fdalgrande_data/Stombeanensis/S_tomb.hifi_reads.fastq.gz > aln_S_tomb_removed_organelles.sam  & # for PacBio subreads
 
 #converting the output to bam and sort it
