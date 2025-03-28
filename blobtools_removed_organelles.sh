@@ -1,6 +1,7 @@
 #!/bin/bash --login
 
-#conda activate btk
+conda activate btk
+
 #create a BlobTools database using the primary assembly, after removing organelles
 #we integrate sequence data, coverage information and BUSCO completeness results
 
