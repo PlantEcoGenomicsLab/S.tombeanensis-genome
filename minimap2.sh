@@ -37,6 +37,7 @@ samtools view -S -b aln_S_tomb.asm.bp.hap2.sam > aln_S_tomb.asm.bp.hap2.bam &
 samtools sort aln_S_tomb.asm.bp.hap2.bam -o aln_S_tomb.asm.bp.hap2.sorted.bam &
 samtools index aln_S_tomb.asm.bp.hap2.sorted.bam &
 
+
 #run minimap2 on primary
 #indexing the assebly
 minimap2 -d S_tomb.asm.bp.primary.p_ctg.fa.mmi /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.p_ctg.fa &
@@ -50,4 +51,3 @@ samtools view -S -b aln_S_tomb.asm.bp.primary.sam > aln_S_tomb.asm.bp.primary.ba
 
 samtools sort aln_S_tomb.asm.bp.primary.bam -o aln_S_tomb.asm.bp.primary.sorted.bam &
 samtools index -c aln_S_tomb.asm.bp.primary.sorted.bam &
-
