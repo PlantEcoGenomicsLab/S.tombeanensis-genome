@@ -10,6 +10,5 @@
 conda activate test
 
 #run minimap2 to align the HiFi reads against the filtered primary assembly
-
 minimap2 -t 8 -ax map-pb /data/fdalgrande_data/Stombeanensis/S_tomb.asm.bp.p_ctg.filtered.fa /data/fdalgrande_data/Stombeanensis/S_tomb.hifi_reads.fastq.gz \
 | samtools sort -o aln_S_tomb.asm.bp.primary.filtered.bam | samtools index &
