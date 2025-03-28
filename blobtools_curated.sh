@@ -1,7 +1,7 @@
 #!/bin/bash --login
 
 conda activate btk
-#script to generate a BlobTools dataset using the primary assembly cured by purge haplotigs to reduce over-assembly
+#script to generate a BlobTools dataset using the primary assembly cured with purge haplotigs to reduce over-assembly
 blobtools create \
     --fasta /data/fdalgrande_data/Stombeanensis/assemblies/purge_haplotigs/S_tomb_removed_organelles.curated.fasta \
     --cov /data/fdalgrande_data/Stombeanensis/minimap2/purgehap_output/aln_S_tomb_curated.sorted.bam \
