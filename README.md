@@ -35,7 +35,7 @@ This step is crucial for assessing the quality and reliability of the assembly b
 Before visualizing the data with BlobTools, we first generated the required BlobTools dataset using blobtools create. This step integrates the raw assembly, coverage data, taxonomic hits, and completeness metrics into a structured dataset that can be analyzed interactively.
 To visualised blobtools interactive pages use the following command in your terminal:
 `blobtools view --remote blobtools_folder`
-This will initialize the viewer, and you should see an output similar to:
+This will initialize the viewer, and you should see an output similar to:  
 `Initializing viewer
 View dataset at http://localhost:8001/view/blobtools_Stomb_hap1/dataset/blobtools_Stomb_hap1/blob
 For remote access use:
