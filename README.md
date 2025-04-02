@@ -4,7 +4,8 @@ Please note that all the annotated pipelines are suitable for fdalgrande@bio-ort
 
 
 ## Quality Control
-For quality control of PacBio HiFi reads we used `FastQC.sh`. 
+For quality control of PacBio HiFi reads we used `FastQC.sh`.
+Additionally, we performed k-mer distribution analysis using `GenomeScope` to estimate genome size and heterozygosity.
 
 ## Raw Assembly
 Initial raw assembly was done with `hifiasm1.sh`.
