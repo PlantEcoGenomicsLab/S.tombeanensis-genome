@@ -9,6 +9,7 @@ Additionally, we performed k-mer distribution analysis using `GenomeScope` to es
 
 ## Raw Assembly
 Initial raw assembly was done with `hifiasm1.sh`.
+We also used `BUSCO` to assess assembly completeness and `Assemblathon` to calculate a variety of assembly quality metrics.
 
 ## Binning
 Binning is performed with Blobtoolkit, which uses:
