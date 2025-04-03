@@ -4,11 +4,11 @@ Please note that all the annotated pipelines are suitable for fdalgrande@bio-ort
 
 ## Quality Control
 For quality control of PacBio HiFi reads we used [`FastQC.sh`](Quality%20Control/FastQC.sh).
-Additionally, we performed k-mer distribution analysis using [`GenomeScope.sh`](QualityControl/GenomeScope.sh) to estimate genome size and heterozygosity.
+Additionally, we performed k-mer distribution analysis using [`GenomeScope.sh`](Quality%20Control/GenomeScope.sh) to estimate genome size and heterozygosity.
 
 ## Raw Assembly
-Initial raw assembly was done with [`hifiasm1.sh`](RawAssembly/hifiasm1.sh).
-We also used `busco.sh` to assess assembly completeness and [`assemblathon.sh`](RawAssembly/assemblathon.sh) to calculate a variety of assembly quality metrics.
+Initial raw assembly was done with [`hifiasm1.sh`](Raw%20Assembly/hifiasm1.sh).
+We also used `busco.sh` to assess assembly completeness and [`assemblathon.sh`](Raw%20Assembly/assemblathon.sh) to calculate a variety of assembly quality metrics.
 From this point onwards, all subsequent analysis steps use only the primary assembly.
 
 ## Binning
