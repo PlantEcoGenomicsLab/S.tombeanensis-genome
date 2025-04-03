@@ -46,3 +46,9 @@ This allows you to explore the BlobTools results interactively through a web-bas
 ### Filtering for Streptophyta with BlobTools
 To filter the dataset and retain only sequences classified under the phylum Streptophyta, we applied filtering commands contained in `blobtools_filter.sh`.
 After filtering the dataset for Streptophyta, we performed an additional quality check using `assemblathon_filter.sh`.
+
+## Purge Haplotigs
+To reduce haplotig contamination in the genome assembly, we used `purge_haplotigs.sh`, a tool designed to identify and remove haplotigs based on read depth and heterozygosity.  The tool classifies contigs into primary and redundant haplotigs, which are then purged to improve assembly quality.
+
+## Final Validation
+To evaluate the final assembly, we used `busco_curated.sh` to assess genome completeness, `assemblathon_curated.sh` to calculate various assembly quality metrics, and `merqury.sh` to evaluate the accuracy of the assembly by comparing it to the expected k-mer distribution.
