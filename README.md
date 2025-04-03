@@ -68,6 +68,10 @@ Same approach was applied to the mitochondrial genome. After the initial steps, 
 To ensure that the primary genome assembly contained only nuclear sequences, we filtered out contigs corresponding to organellar genomes. This was done using a BLAST-based approach `filter_organelles.sh`. 
 This step resulted in a nuclear genome assembly free of organellar contamination, which was then used for downstream analyses.
 
+### Post-Filtering Validation
+After removing organelle-derived sequences, we reassessed the nuclear genome assembly to ensure its integrity. Completeness was verified `busco_removed_organelles.sh` and coverage data updated `minimap2_removed_organelles.sh`. These files were incorporated to rerun `blobtools_removed_organelles.sh`, ensuring an accurate reassessment of taxonomic classification.
+Assembly metrics were recalculated with `assemblathon_removed_organelles.sh` to confirm consistency. These steps ensured that the filtered genome remained high-quality and suitable for downstream analyses.
+
 
 ## Purge Haplotigs
 To reduce haplotig contamination in the genome assembly, we used `purge_haplotigs.sh`, a tool designed to identify and remove haplotigs based on read depth and heterozygosity.  The tool classifies contigs into primary and redundant haplotigs, which are then purged to improve assembly quality.
