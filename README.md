@@ -8,7 +8,7 @@ Additionally, we performed k-mer distribution analysis using [`GenomeScope.sh`](
 
 ## Raw Assembly
 Initial raw assembly was done with [`hifiasm1.sh`](Raw%20Assembly/hifiasm1.sh).
-We also used [`busco.sh`](Quality%20Control/busco.sh) to assess assembly completeness and [`assemblathon.sh`](Raw%20Assembly/assemblathon.sh) to calculate a variety of assembly quality metrics.
+We also used [`busco.sh`](Raw%20AAssembly/busco.sh) to assess assembly completeness and [`assemblathon.sh`](Raw%20Assembly/assemblathon.sh) to calculate a variety of assembly quality metrics.
 From this point onwards, all subsequent analysis steps use only the primary assembly.
 
 ## Binning
@@ -27,7 +27,7 @@ Hits file can be created with blastn or diamond blastx, we used [`diamond.sh`](B
 For this project, we used diamond.sh to perform fast protein-based taxonomic classification, which provides a high-confidence approach to identifying potential contaminants or misassemblies.
 
 ### BUSCO completeness
-To evaluate the completeness of our assembly, we used [`busco.sh`](Quality%20Control/busco.sh), which compares the assembly against a database of conserved single-copy orthologs.
+To evaluate the completeness of our assembly, we used [`busco.sh`](Raw%20AAssembly/busco.sh), which compares the assembly against a database of conserved single-copy orthologs.
 This step is crucial for assessing the quality and reliability of the assembly before proceeding with downstream analyses.
 
 ### Blobtools 
