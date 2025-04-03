@@ -3,7 +3,7 @@ Saxifraga tombeanensis genome assembly pipeline.
 Please note that all the annotated pipelines are suitable for fdalgrande@bio-orto, so if you're not using the server of the Botanical Garden of Padova you may have to change something.
 
 ## Quality Control
-For quality control of PacBio HiFi reads we used [`FastQC.sh`](QualityControl/FastQC.sh).
+For quality control of PacBio HiFi reads we used [`FastQC.sh`](Quality Control/FastQC.sh).
 Additionally, we performed k-mer distribution analysis using [`GenomeScope.sh`](QualityControl/GenomeScope.sh) to estimate genome size and heterozygosity.
 
 ## Raw Assembly
