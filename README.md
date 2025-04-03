@@ -7,10 +7,12 @@ Please note that all the annotated pipelines are suitable for fdalgrande@bio-ort
 For quality control of PacBio HiFi reads we used `FastQC.sh`.
 Additionally, we performed k-mer distribution analysis using `GenomeScope.sh` to estimate genome size and heterozygosity.
 
+
 ## Raw Assembly
 Initial raw assembly was done with `hifiasm1.sh`.
 We also used `busco.sh` to assess assembly completeness and `assemblathon.sh` to calculate a variety of assembly quality metrics.
 From this point onwards, all subsequent analysis steps use only the primary assembly.
+
 
 ## Binning
 Binning is performed with Blobtoolkit. The binning process utilizes multiple input files:
@@ -47,8 +49,33 @@ This allows you to explore the BlobTools results interactively through a web-bas
 To filter the dataset and retain only sequences classified under the phylum Streptophyta, we applied filtering commands contained in `blobtools_filter.sh`.
 After filtering the dataset for Streptophyta, we performed an additional quality check using `assemblathon_filter.sh`.
 
+
+## Organelle assembly
+The chloroplast and mitochondrial organellar genomes were assembled separately using OATK with species-specific databases and 
+
+### Chloroplast Genome Assembly
+OATK was used with the Saxifragales database (NCBI Taxonomy ID: 41946) to assemble the chloroplast genome from the high-quality sequencing reads.  
+You can find the script for this step in `chloroplast_oatk.sh`.
+After running OATK to refine the chloroplast genome assembly, we used `chloroplast_ptGAUL.sh`to further improve the assembly.
+We visualized the assembly using Bandage, a tool for interactive visualization of genome assemblies.
+
+### Mitochondrial Genome Assembly
+OATK was used with the Eudicotyledons mitochondrial database (NCBI Taxonomy ID: 71240) to assemble the mitochondrial genome.
+The script for this part is available in `mitochondrion_oatk.sh`.
+Same approach was applied to the mitochondrial genome. After the initial steps, we used `mitochondrion_ptGAUL.sh` to assemble the mitochondrial genome, followed by the use of Bandage.
+
+### Organelle Contig Removal
+To ensure that the primary genome assembly contained only nuclear sequences, we filtered out contigs corresponding to organellar genomes. This was done using a BLAST-based approach `filter_organelles.sh`. 
+This step resulted in a nuclear genome assembly free of organellar contamination, which was then used for downstream analyses.
+
+
 ## Purge Haplotigs
 To reduce haplotig contamination in the genome assembly, we used `purge_haplotigs.sh`, a tool designed to identify and remove haplotigs based on read depth and heterozygosity.  The tool classifies contigs into primary and redundant haplotigs, which are then purged to improve assembly quality.
 
+
 ## Final Validation
 To evaluate the final assembly, we used `busco_curated.sh` to assess genome completeness, `assemblathon_curated.sh` to calculate various assembly quality metrics, and `merqury.sh` to evaluate the accuracy of the assembly by comparing it to the expected k-mer distribution.
+
+For consistency with the Saxifraga tombeanensis genome validation steps, we performed an additional run of `blobtools_curated.sh` using updated coverage data from `minimap2_curated.sh` and completeness assessment with `blobtools_curated.sh`.
+
+Additionally, we ran `diamond_curated.sh` to perform a sensitive protein BLAST search against the SwissProt database.
