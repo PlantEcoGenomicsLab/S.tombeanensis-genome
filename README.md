@@ -5,7 +5,7 @@ Please note that all the annotated pipelines are suitable for fdalgrande@bio-ort
 
 ## Quality Control
 For quality control of PacBio HiFi reads we used `FastQC.sh`.
-Additionally, we performed k-mer distribution analysis using `GenomeScope.sh` to estimate genome size and heterozygosity.
+Additionally, we performed k-mer distribution analysis using [`GenomeScope.sh`](GenomeScope.sh) to estimate genome size and heterozygosity.
 
 
 ## Raw Assembly
