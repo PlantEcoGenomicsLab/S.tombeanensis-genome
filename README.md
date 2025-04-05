@@ -12,7 +12,10 @@ We also used [`busco.sh`](Raw%20Assembly/busco.sh) to assess assembly completene
 From this point onwards, all subsequent analysis steps use only the primary assembly.
 
 ## Binning
-Binning is performed with Blobtoolkit. The binning process utilizes multiple input files:
+Binning is the process of grouping contigs based on shared characteristics, such as GC content, read coverage and taxonomic origin. This step is useful for identifying potential contaminant sequences and ensuring that only sequences belonging to the target organism are retained in the final assembly.  
+For this project, binning was performed and visualized using BlobToolKit, an interactive tool that enables the integration and exploration of multiple data layers associated with genome assemblies.
+
+The binning process in BlobToolKit utilizes several input files:
  - Raw assembly file (required)
  - Coverage file (optional)
  - Hits file (optional)
@@ -69,7 +72,7 @@ After removing organelle-derived sequences, we reassessed the nuclear genome ass
 Assembly metrics were recalculated with [`assemblathon_removed_organelles.sh`](Organelle%20Assembly/assemblathon_removed_organelles.sh) to confirm consistency. These steps ensured that the filtered genome remained high-quality and suitable for downstream analyses.
 
 ## Purge Haplotigs
-To reduce haplotig contamination in the genome assembly, we used [`purge_haplotigs.sh`](Purge%20Haplotigs/purge_haplotigs.sh), a tool designed to identify and remove haplotigs based on read depth and heterozygosity. The tool classifies contigs into primary and redundant haplotigs, which are then purged to improve assembly quality.
+To remove redundant sequences and resolve heterozygous regions, we used [`purge_haplotigs.sh`](Purge%20Haplotigs/purge_haplotigs.sh) This tool identifies and eliminates haplotigs (contigs representing alternative haplotypes) based on read depth and sequence similarity. The result is a refined assembly containing only the primary haplotype, suitable for downstream analyses such as annotation.
 
 ## Final Validation
 To evaluate the final assembly, we used [`busco_curated.sh`](Final%20Validation/busco_curated.sh) to assess genome completeness, [`assemblathon_curated.sh`](Final%20Validation/assemblathon_curated.sh) to calculate various assembly quality metrics and [`merqury.sh`](Final%20Validation/merqury.sh) to evaluate the accuracy of the assembly by comparing it to the expected k-mer distribution.
