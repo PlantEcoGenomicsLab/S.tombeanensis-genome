@@ -78,3 +78,8 @@ To remove redundant sequences and resolve heterozygous regions, we used [`purge_
 To evaluate the final assembly, we used [`busco_curated.sh`](Final%20Validation/busco_curated.sh) to assess genome completeness, [`assemblathon_curated.sh`](Final%20Validation/assemblathon_curated.sh) to calculate various assembly quality metrics and [`merqury.sh`](Final%20Validation/merqury.sh) to evaluate the accuracy of the assembly by comparing it to the expected k-mer distribution.
 
 For consistency with the Saxifraga tombeanensis genome validation steps, we performed an additional run of [`blobtools_curated.sh`](Final%20Validation/blobtools_curated.sh) using updated coverage data from [`minimap2_curated.sh`](Final%20Validation/minimap2_curated.sh) and updated hits file [`diamond_curated.sh`](Final%20Validation/diamond_curated.sh).
+
+##  Annotation
+
+### Masking
+To prepare the genome for annotation with BRAKER3, we performed soft masking on the assembly by converting repetitive regions into lowercase letters. This step, implemented in the [`masking.sh`](Annotation/masking.sh), helps prevent repetitive elements from interfering with the gene prediction process.
