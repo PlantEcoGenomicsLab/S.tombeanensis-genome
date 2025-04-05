@@ -15,7 +15,7 @@ From this point onwards, all subsequent analysis steps use only the primary asse
 Binning is the process of grouping contigs based on shared characteristics, such as GC content, read coverage and taxonomic origin. This step is useful for identifying potential contaminant sequences and ensuring that only sequences belonging to the target organism are retained in the final assembly.  
 For this project, binning was performed and visualized using BlobToolKit, an interactive tool that enables the integration and exploration of multiple data layers associated with genome assemblies.
 
-The binning process in BlobToolKit utilizes several input files:
+The binning process in [`blobtools.sh`](Binning/blobtools.sh) utilizes several input files:
  - Raw assembly file (required)
  - Coverage file (optional)
  - Hits file (optional)
