@@ -32,7 +32,7 @@ Hits file can be created with either blastn or diamond blastx, we used [`diamond
 We calculated BUSCO completeness with [`busco.sh`](Raw%20Assembly/busco.sh)
 
 ### Blobtools 
-Before visualizing the data with BlobToolkit, we generated the required BlobDir using `blobtools.sh` create. This step integrates the raw assembly, coverage data, taxonomic hits, and completeness metrics into a structured dataset that can be analyzed interactively.
+Before visualizing the data with BlobToolkit, we generated the required BlobDir using `blobtools.sh`. This step integrates the raw assembly, coverage data, taxonomic hits, and completeness metrics into a structured dataset that can be analyzed interactively.
 Following, some brief instrutions will help users to visualize the `blobtools.sh` results.
 
 To visualise blobtools interactive pages enter the following command in your terminal:
@@ -41,7 +41,7 @@ This will initialize the viewer, and you should see an output similar to:
  `Initializing viewer
  View dataset at http://localhost:8001/view/blobtools_Stomb_hap1/dataset/blobtools_Stomb_hap1/blob
  For remote access use:
-    ssh -L 8001:127.0.0.1:8001 -L 8000:127.0.0.1:8000 username@remote_host`
+ ssh -L 8001:127.0.0.1:8001 -L 8000:127.0.0.1:8000 username@remote_host`
 Then open a new terminal window and access to the server via `ssh` using the command provided and copy-paste the http link in any browser to view the results.
 
 This allows you to explore the BlobTools results interactively through a web-based interface, facilitating the inspection of taxonomic assignments and potential contaminants in the assembly.
