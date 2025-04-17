@@ -73,14 +73,14 @@ After removing organelle-derived sequences, we reassessed the nuclear genome ass
 New assembly metrics were calculated with [`assemblathon_removed_organelles.sh`](Organelle%20Assembly/assemblathon_removed_organelles.sh) to confirm consistency. These steps ensured that the filtered genome remained high-quality and suitable for downstream analyses.
 
 ## Purge Haplotigs
-To remove redundant sequences and resolve heterozygous regions, we used [`purge_haplotigs.sh`](Purge%20Haplotigs/purge_haplotigs.sh) This tool identifies and eliminates haplotigs (contigs representing alternative haplotypes) based on read depth and sequence similarity. The result is a refined assembly containing only the primary haplotype, suitable for downstream analyses such as annotation.
+We removed redundant sequences and resolved heterozygous regions using [`purge_haplotigs.sh`](Purge%20Haplotigs). This tool identifies haplotigs (contigs representing alternative haplotypes) based on read depth and sequence similarity. The resulting assembly includes only the primary haplotype and is suitable for downstream analyses such as annotation.
 
 ## Final Validation
-To evaluate the final assembly, we used [`busco_curated.sh`](Final%20Validation/busco_curated.sh) to assess genome completeness, [`assemblathon_curated.sh`](Final%20Validation/assemblathon_curated.sh) to calculate various assembly quality metrics and [`merqury.sh`](Final%20Validation/merqury.sh) to evaluate the accuracy of the assembly by comparing it to the expected k-mer distribution.
+To evaluate the final assembly, we used [`busco_curated.sh`](Final%20Validation/busco_curated.sh) to assess genome completeness, [`assemblathon_curated.sh`](Final%20Validation/assemblathon_curated.sh) to calculate quality metrics and [`merqury.sh`](Final%20Validation/merqury.sh) to assess base-level accuracy by comparing the assembly to the expected k-mer distribution.
 
-For consistency with the Saxifraga tombeanensis genome validation steps, we performed an additional run of [`blobtools_curated.sh`](Final%20Validation/blobtools_curated.sh) using updated coverage data from [`minimap2_curated.sh`](Final%20Validation/minimap2_curated.sh) and updated hits file [`diamond_curated.sh`](Final%20Validation/diamond_curated.sh).
+To ensure consistency with previous validation steps,  we performed an additional run of [`blobtools_curated.sh`](Final%20Validation/blobtools_curated.sh) using updated coverage data from [`minimap2_curated.sh`](Final%20Validation/minimap2_curated.sh) and updated hits file [`diamond_curated.sh`](Final%20Validation/diamond_curated.sh).
 
 ##  Annotation
 
 ### Masking
-To prepare the genome for annotation with BRAKER3, we performed soft masking on the assembly by converting repetitive regions into lowercase letters. This step, implemented in the [`masking.sh`](Annotation/masking.sh), helps prevent repetitive elements from interfering with the gene prediction process.
+Before annotation with BRAKER3, we soft-masked the assembly by converting repetitive regions into lowercase letters using [`masking.sh`](Annotation/masking.sh). This step helps prevent repetitive elements from interfering with gene prediction.
